@@ -301,3 +301,76 @@ public class Archer:Character
 		}
 }
 ```
+
+### Sealed (Mühürlü) Class Nedir?
+
+* Sealed Class nesne yönelimli programlamanın kalıtım özelliğini kısıtlamak için kullanılır.
+
+* Sealed keywordü bir class ve metod modifier(niteleyici)dır. Eğer bir class sealed komutuyla işaretlenmişse o classtan kalıtım yapılamaz. Yani o class başka bir sınıfın base classı olamaz. Ayriyetten bir metod sealed komutuyla işaretleniyorsa o metodtan türetilen sınıfların ilgili metodu override etmeleri önlenir.
+
+```C#
+public sealed class Archer:Character
+{
+        public Archer()
+        {
+            Damage = 3;
+        }
+
+		public override void Attack()
+		{
+			Console.WriteLine("Ok ile saldır");
+		}
+}
+```
+
+```C#
+public class Archer:Character
+{
+        public Archer()
+        {
+            Damage = 3;
+        }
+
+		public sealed override void Attack() //Bu sınıfı kalıtım alan sınıf tarafından override edip değiştiremesin diye sealed kullanıldı.
+		{
+			Console.WriteLine("Ok ile saldır");
+		}
+}
+```
+### Interface Nedir?
+
+* Arayüz nesne yönelimli programlama dillerinde, farklı sınıflardan nesnelerin kategorize edilmesini sağlayan soyut bir tür çeşitlerinden biridir.Interface’ler bir class olarak kabul edilmemektedir fakat buna rağmen bir class gibi ve/veya abstract class gibi referans tutabilmektedir. Başka bir yaklaşımla abstract sınıflar tarafından sunulan abstraction’ın bir adım ileri taşınmış halidir interface. 
+* Abstract class da yer alan metodlar metod imzasını verir metodun implementasyonunu ise subclass’a bırakır. Yani yolu gösterir ama yolda nasıl ilerleyeceğini göstermez. İşte tam da bu noktada interface’ler farklı bir görev üstlenmektedir. Interface’ler kendi bağlamından üretilen sınıflar için bir kılavuz, yol gösterici veya gerçekleştirilmesi gereken görevler bütünü olarak tanımlamak yerinde bir yaklaşım olacaktır.
+* class değildir, constructorları yoktur.
+* new instanceları alınamaz sadece miras verebilirler.
+* classlar istedikleri kadar interfaceden miras alabilirler.
+
+![Alt text](image-1.png)
+
+```C#
+public interface IAnimal
+{
+		void Voice();
+}
+```
+
+```C#
+public abstract class BaseClass
+{
+		public string Name { get; set; }
+}
+```
+
+```C#
+public class Dog : BaseClass, IAnimal
+{
+		public void Voice()
+		{
+			Console.WriteLine("Hav hav");
+		}
+}
+```
+
+### Abstract Class ve Interface Arasındaki Farklar Nelerdir?
+
+![Alt text](image-2.png)
