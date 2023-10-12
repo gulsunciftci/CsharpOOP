@@ -183,3 +183,49 @@ public class User
         }
 }
 ```
+
+2. Inheritance(Kalıtım)
+* Biri diğerinden türeyen classlar arasındaki ilişkiye inheritance diyebiliriz.
+
+* İki class arasında Is-A ilişkisi vardır ; A Car is a Vehicle.
+
+```C#
+public class Car : Vehicle { }
+```
+* Inheritance bize yazılan codu tekrar kullanma ve polimorfik yapılar oluşturma avantajları sunar fakat aynı zamanda classlar arasında tightly coupled ilişkiside oluşur.
+* Bir sınıf sadece bir sınıftan kalıtım alır ama birden fazla kalıtım verebilir.
+
+```C#
+public class Character
+{
+		public string CharacterName { get; set; }
+		public int Damage { get; set; }
+		public int Armor { get; set; }
+
+		protected void Walk()
+		{
+			Console.WriteLine("Kırlarda yürüyorum");
+		}
+}
+```
+
+```C#
+public class Archer:Character
+{
+        public Archer()
+        {
+            Walk();
+            Damage = 3;
+        }
+}
+```
+```C#
+public class Wizard : Character
+{
+
+		public int DoMagic(int damage)
+		{
+			return damage * 5;
+		}
+}
+```

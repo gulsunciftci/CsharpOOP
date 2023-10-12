@@ -30,3 +30,10 @@ Console.WriteLine("**************");
 Console.WriteLine("Encapsulation");
 User user = new User("Gulsun","1234");
 Console.WriteLine(user.Password);
+
+Console.WriteLine("**************");
+Console.WriteLine("Inheritance");
+Archer archer = new Archer();
+Console.WriteLine(archer.Damage);
+Wizard wizard = new Wizard();
+Console.WriteLine(wizard.DoMagic(archer.Damage));
