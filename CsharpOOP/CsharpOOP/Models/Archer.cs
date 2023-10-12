@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CsharpOOP.Models
 {
-	public class Archer:Character
+	public sealed class Archer:Character
 	{
         public Archer()
         {
