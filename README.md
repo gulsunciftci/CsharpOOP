@@ -229,3 +229,75 @@ public class Wizard : Character
 		}
 }
 ```
+
+3. Abstraction (Soyutlama)
+
+* Abstract class, instance edilemeyen özel bir class türüdür. Bazen class üyelerini base classda implement etmek doğru olmayabilir böyle bir durumda abstract class kullanmak gerekir.
+
+```C#
+public abstract class Shape
+{
+ public abstract Draw();
+}
+public class Square: Shape
+{
+ public override Draw()
+ {
+ }
+}
+```
+* Abstract class içerisinde içi boş abstract metodlar tanımlanabilir, bu metodlar alt classlar tarafından override edilmek zorundadır.
+* Abstract class dan miras alınır ama instance edilmez.
+
+```C#
+Shape shape = new Shape(); //Hata
+```
+
+```C#
+public abstract class Shape
+{
+		public int Edge { get; set; }
+		public int Area { get; set; }
+		public int Length { get; set; }
+
+}
+```
+
+```C#
+public class Square:Shape
+{
+
+}
+```
+
+4. Polymorphism (Çok Biçimlilik)
+
+* Inherit edilen class’ın metodu override edilebilir, bu şekilde inherit edilen classlarda metodların değiştirilerek kunllanılmasına polimorfizm denir.
+
+```C#
+public class Character
+{
+		public string CharacterName { get; set; }
+		public int Damage { get; set; }
+		public int Armor { get; set; }
+
+		public virtual void Attack()
+		{
+			Console.WriteLine("Normal saldırı yap");
+		}
+}
+```
+```C#
+public class Archer:Character
+{
+        public Archer()
+        {
+            Damage = 3;
+        }
+
+		public override void Attack()
+		{
+			Console.WriteLine("Ok ile saldır");
+		}
+}
+```
