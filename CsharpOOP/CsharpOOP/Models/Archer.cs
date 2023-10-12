@@ -10,8 +10,12 @@ namespace CsharpOOP.Models
 	{
         public Archer()
         {
-            Walk();
             Damage = 3;
         }
-    }
+
+		public override void Attack()
+		{
+			Console.WriteLine("Ok ile saldır");
+		}
+	}
 }

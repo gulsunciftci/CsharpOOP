@@ -12,9 +12,9 @@ namespace CsharpOOP.Models
 		public int Damage { get; set; }
 		public int Armor { get; set; }
 
-		protected void Walk()
+		public virtual void Attack()
 		{
-			Console.WriteLine("Kırlarda yürüyorum");
+			Console.WriteLine("Normal saldırı yap");
 		}
 	}
 }

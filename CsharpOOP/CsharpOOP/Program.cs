@@ -35,5 +35,18 @@ Console.WriteLine("**************");
 Console.WriteLine("Inheritance");
 Archer archer = new Archer();
 Console.WriteLine(archer.Damage);
+archer.Attack();
 Wizard wizard = new Wizard();
 Console.WriteLine(wizard.DoMagic(archer.Damage));
+
+Console.WriteLine("**************");
+Console.WriteLine("Inheritance");
+Character archer1 = new Archer();
+Character character = archer1 as Character; //cast yöntemi ile dönüştürdüm
+
+
+Console.WriteLine("**************");
+Console.WriteLine("Abstraction (Soyutlama)");
+Square square = new Square();
+Rectangle rectangle = new Rectangle();
+//Shape shape = new Shape(); //Hata
